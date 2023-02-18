@@ -196,9 +196,11 @@ const ContactList = () => {
                 source={{uri: `https://i.pravatar.cc/60/${id}`}}
                 style={styles.userImage}
               />
-              <Text style={styles.userName}>{name}</Text>
-              <Text style={styles.userName}>{email}</Text>
-              <Text style={styles.userName}>{phone}</Text>
+              <View style={styles.userCardDataWrapper}>
+                <Text style={styles.userName}>{name}</Text>
+                <Text style={styles.userName}>{email}</Text>
+                <Text style={styles.userName}>{phone}</Text>
+              </View>
             </View>
           );
         })}
@@ -210,13 +212,33 @@ const ContactList = () => {
 export default ContactList;
 
 const styles = StyleSheet.create({
-  headingText: {},
-  container: {},
-  userCard: {},
+  headingText: {
+    fontSize: 24,
+    fontWeight: 'bold',
+    paddingHorizontal: 8,
+  },
+  container: {
+    paddingHorizontal: 16,
+  },
+  userCard: {
+    flex: 1,
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 16,
+    marginBottom: 4,
+    backgroundColor: '#8D3DAF',
+    padding: 4,
+    borderRadius: 10,
+  },
+  userCardDataWrapper: {},
   userImage: {
     height: 60,
     width: 60,
     borderRadius: 60,
   },
-  userName: {},
+  userName: {
+    fontSize: 12,
+    fontWeight: '400',
+    color: '#FFF',
+  },
 });
